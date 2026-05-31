@@ -232,8 +232,6 @@ nav {
   transform: translateY(-2px);
 }
 
-
-
 /* ===== STATS ===== */
 .stats {
   background: var(--gray-100);
@@ -918,8 +916,6 @@ footer {
   font-weight: 700 !important;
 }
 
-
-
 /* ===== PRODUCT IMAGES ===== */
 .card-visual-img {
   padding: 0;
@@ -987,68 +983,210 @@ footer {
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ===== MEDIA QUERIES ===== */
+/* ==========================================================================
+   ===== MEDIA QUERIES (RESPONSIVE DESIGN) MAPPED & OPTIMIZED =====
+   ========================================================================== */
+
+/* 1. الشاشات الكبيرة والمكتبية (تعديلات الشاشات المتوسطة والكبيرة) */
+@media (max-width: 1200px) {
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
 
 @media (max-width: 1024px) {
-  .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
-  .products-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 36px; 
+  }
+  .products-grid { 
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .contact-section {
+    gap: 40px;
+    padding: 80px 4%;
+  }
 }
 
+/* 2. شاشات التابلت والأجهزة اللوحية (الوضع الأفقي والعمودي) */
 @media (max-width: 900px) {
-  .hero-inner { flex-direction: column-reverse; align-items: center; text-align: center; }
-  .hero-content { text-align: center; padding-bottom: 40px; }
-  .hero-content p { margin: 0 auto 40px; }
-  .hero-buttons { justify-content: center; }
-  .hero-device { align-self: center; }
-  .hero-img-wrap { margin-bottom: -40px; width: 280px; height: 380px; }
-  .featured-grid { grid-template-columns: 1fr; text-align: center; }
-  .featured-img-bg { min-height: 360px; }
-  .featured-visual { max-width: 480px; margin: 0 auto; }
-  .specs-list { text-align: right; }
-  .price-row { justify-content: center; }
-  .nav-links { display: none; }
-  .stats-grid { grid-template-columns: repeat(2, 1fr); }
-  .t-grid { grid-template-columns: repeat(2, 1fr); }
+  .hero {
+    height: auto;
+    max-height: none;
+    padding: 100px 5% 60px;
+  }
+  .hero-bg-full {
+    object-position: center;
+  }
+  .hero-inner { 
+    flex-direction: column-reverse; 
+    align-items: center; 
+    text-align: center; 
+  }
+  .hero-content { 
+    flex: 0 0 100%;
+    text-align: center; 
+    padding: 30px 24px;
+    margin-top: 40px; 
+    max-width: 600px;
+  }
+  .hero-content p { 
+    margin: 0 auto 30px; 
+  }
+  .hero-buttons { 
+    justify-content: center; 
+  }
+
+  .featured-grid { 
+    grid-template-columns: 1fr; 
+    text-align: center; 
+  }
+  .featured-img-bg { 
+    min-height: 360px; 
+  }
+  .featured-visual { 
+    max-width: 480px; 
+    margin: 0 auto; 
+    grid-row: 1;
+  }
+  .specs-list { 
+    text-align: right; 
+    max-width: 400px;
+    margin: 0 auto 32px;
+  }
+  .price-row { 
+    justify-content: center; 
+  }
+
+  .nav-links { 
+    display: none; 
+  }
+  .mob-nav-right { 
+    display: flex; 
+  }
+
+  .stats-grid { 
+    grid-template-columns: repeat(2, 1fr); 
+  }
+  .t-grid { 
+    grid-template-columns: repeat(2, 1fr); 
+  }
+
+  .contact-section {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
 }
 
+/* 3. شاشات الهواتف الذكية الكبيرة والمتوسطة */
 @media (max-width: 768px) {
-  nav { padding: 0 4%; }
-  .hero { padding: 90px 4% 48px; }
-  .hero-img-wrap { width: 220px; height: 300px; }
-  .cat-grid { grid-template-columns: repeat(3, 1fr); }
-  .filter-tabs { gap: 8px; }
-  .filter-tab { padding: 8px 14px; font-size: 15px; }
-  .newsletter-box { padding: 40px 24px; }
+  nav { 
+    padding: 0 4%; 
+  }
+  section { 
+    padding: 60px 4%; 
+  }
+  
+  .filter-tabs { 
+    gap: 8px; 
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding: 10px 4px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .filter-tabs::-webkit-scrollbar {
+    display: none;
+  }
+  .filter-tab { 
+    padding: 8px 16px; 
+    font-size: 15px; 
+    flex-shrink: 0;
+  }
+  
+  .newsletter-box { 
+    padding: 40px 20px; 
+  }
+  .contact-form-wrap {
+    padding: 32px 20px;
+  }
 }
 
-@media (max-width: 600px) {
-  section { padding: 64px 4%; }
-  .hero h1 { font-size: 36px; }
-  .hero p { font-size: 15px; }
-  .hero-buttons { flex-direction: column; align-items: center; }
-  .btn-primary, .btn-outline { width: 100%; text-align: center; }
-  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
-  .stat-item h3 { font-size: 30px; }
-  .cat-grid { grid-template-columns: repeat(2, 1fr); }
-  .products-grid { grid-template-columns: 1fr; }
-  .t-grid { grid-template-columns: 1fr; }
-  .footer-grid { grid-template-columns: 1fr; gap: 28px; }
-  .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
-  .form-row { flex-direction: column; }
-  .form-row button { width: 100%; }
-  .section-title { font-size: 24px; }
-  .price-row { flex-wrap: wrap; }
+/* 4. شاشات الهواتف الذكية الصغيرة جداً */
+@media (max-width: 576px) {
+  .hero h1 { 
+    font-size: 32px; 
+  }
+  .hero p { 
+    font-size: 14px; 
+  }
+  .hero-buttons { 
+    flex-direction: column; 
+    align-items: center; 
+    width: 100%;
+  }
+  .btn-primary, .btn-outline { 
+    width: 100%; 
+    text-align: center; 
+  }
+  
+  .stats-grid { 
+    grid-template-columns: 1fr; 
+    gap: 24px; 
+  }
+  .cat-grid { 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 12px;
+  }
+  .products-grid { 
+    grid-template-columns: 1fr; 
+  }
+  .t-grid { 
+    grid-template-columns: 1fr; 
+  }
+  .footer-grid { 
+    grid-template-columns: 1fr; 
+    gap: 32px; 
+  }
+  .footer-bottom { 
+    flex-direction: column; 
+    gap: 12px; 
+    text-align: center; 
+  }
+  
+  .form-row { 
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .form-row button { 
+    width: 100%; 
+  }
+  
+  .section-title { 
+    font-size: 24px; 
+  }
+  .price-row { 
+    flex-wrap: wrap; 
+    justify-content: center;
+  }
 }
 
 @media (max-width: 400px) {
-  .hero h1 { font-size: 28px; }
-  .cat-grid { grid-template-columns: repeat(2, 1fr); }
-  .filter-tab { padding: 7px 10px; font-size: 13px; }
-  .hero-img-wrap { width: 180px; height: 240px; }
-  .card-title { font-size: 15px; }
+  .hero h1 { 
+    font-size: 26px; 
+  }
+  .cat-grid { 
+    grid-template-columns: 1fr;
+  }
+  .card-title { 
+    font-size: 16px; 
+  }
+  .featured-img-bg {
+    min-height: 280px;
+  }
 }
 
-/* ===== CART BUTTON ===== */
+/* ===== CART BUTTON & CONFIGS ===== */
 .cart-btn {
   position: relative;
   background: none;
@@ -1087,21 +1225,19 @@ footer {
   transform: scale(1.4);
 }
 
-/* ── Watch7 image fix ── */
 .watch-img {
   object-fit: contain !important;
   padding: 20px;
   background: #f0f3fa;
 }
 
-/* ── Odyssey image fix ── */
 .odyssey-img {
   object-fit: contain !important;
   padding: 20px;
   background: #f0f3fa !important;
 }
 
-/* ===== MOBILE NAV ===== */
+/* ===== MOBILE NAV DRAWER SYSTEM ===== */
 .mob-nav-right {
   display: none;
   align-items: center;
@@ -1132,7 +1268,6 @@ footer {
 }
 
 .mobile-menu.active { display: block; }
-
 .mobile-menu ul { list-style: none; }
 
 .mobile-menu ul li a {
