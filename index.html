@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="سامسونج - اكتشف أحدث منتجات Samsung من هواتف وتلفزيونات وأجهزة منزلية">
+  <meta name="keywords" content="Samsung, سامسونج, هواتف, تلفزيون, أجهزة">
+  <meta name="author" content="Samsung Store">
+  <title>Samsung - اكتشف الابتكار</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <a href="#" class="nav-logo">SAMSUNG</a>
+    <ul class="nav-links">
+      <li><a href="#products">المنتجات</a></li>
+      <li><a href="#featured">المميز</a></li>
+      <li><a href="#testimonials">آراء العملاء</a></li>
+      <li><a href="contact.html" target="_blank">تواصل معنا</a></li>
+      <li>
+        <button class="cart-btn" onclick="toggleCart()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+          </svg>
+          <span class="cart-count" id="cart-count">0</span>
+        </button>
+      </li>
+      <li><a href="#newsletter" class="nav-cta">اشترك الآن</a></li>
+    </ul>
+    <!-- زر الجوال: السلة + ☰ -->
+    <div class="mob-nav-right">
+      <button class="cart-btn" onclick="toggleCart()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+        </svg>
+        <span class="cart-count" id="cart-count-mob">0</span>
+      </button>
+      <button class="nav-toggle" id="nav-toggle" onclick="toggleMenu()">☰</button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="#products" onclick="closeMenu()">المنتجات</a></li>
+      <li><a href="#featured" onclick="closeMenu()">المميز</a></li>
+      <li><a href="#testimonials" onclick="closeMenu()">آراء العملاء</a></li>
+      <li><a href="contact.html" target="_blank" onclick="closeMenu()">تواصل معنا</a></li>
+    </ul>
+    <a href="#newsletter" class="mob-cta" onclick="closeMenu()">اشترك الآن</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <img src="2.png" alt="" class="hero-bg-full" />
+    <div class="hero-inner">
+      <div class="hero-content">
+        <span class="hero-badge">✦ جيل جديد من الابتكار</span>
+        <h1>اختبر <span>المستقبل</span><br>بأيديك</h1>
+        <p>أجهزة Samsung تجمع بين التكنولوجيا المتقدمة والتصميم الاستثنائي لتجربة لا مثيل لها</p>
+        <div class="hero-buttons">
+          <a href="#products" class="btn-primary">تسوّق الآن</a>
+          <a href="#featured" class="btn-outline">اكتشف المميز</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <h3>+200M</h3>
+        <p>جهاز مباع سنوياً</p>
+      </div>
+      <div class="stat-item">
+        <h3>190+</h3>
+        <p>دولة حول العالم</p>
+      </div>
+      <div class="stat-item">
+        <h3>75 عاماً</h3>
+        <p>من الابتكار المستمر</p>
+      </div>
+      <div class="stat-item">
+        <h3>#1</h3>
+        <p>في الهواتف الذكية</p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- FEATURED PRODUCT -->
+  <section class="featured" id="featured">
+    <div class="section-header">
+      <span class="section-tag">المنتج المميز</span>
+      <h2 class="section-title">Galaxy S25 Ultra</h2>
+    </div>
+    <div class="featured-grid">
+      <div class="featured-info">
+        <h3>الأقوى في تاريخ Galaxy</h3>
+        <h2>Galaxy S25 Ultra — الحد الأقصى للأداء</h2>
+        <p>معالج Snapdragon 8 Elite المصمم خصيصاً لـ Galaxy، مع كاميرا 200 ميغابكسل وقلم S Pen المدمج. تجربة AI في كل لمسة.</p>
+        <ul class="specs-list">
+          <li>معالج Snapdragon 8 Elite بسرعة 4nm</li>
+          <li>شاشة Dynamic AMOLED 6.9 بوصة 120Hz</li>
+          <li>بطارية 5000mAh مع شحن 45W</li>
+          <li>ذاكرة RAM 12GB وتخزين حتى 1TB</li>
+          <li>Galaxy AI — مساعد الذكاء الاصطناعي</li>
+        </ul>
+        <div class="price-row">
+          <span class="price">5,800 د.ل</span>
+          <span class="price-old">6,500 د.ل</span>
+          <span class="discount-badge">-14%</span>
+        </div>
+        <a href="#" class="btn-primary">أضف إلى السلة</a>
+      </div>
+      <div class="featured-visual">
+        <img src="titanium-black-hero-zoom.jpg" alt="Galaxy S25 Ultra" class="featured-product-img" />
+      </div>
+    </div>
+  </section>
+<!-- FILTER SECTION -->
+  <section class="search-section" id="products">
+    <div class="section-header">
+      <span class="section-tag">تصفية المنتجات</span>
+      <h2 class="section-title">اختر الفئة</h2>
+      <p class="section-sub">اضغط على فئة لعرض منتجاتها</p>
+    </div>
+    <div class="search-box">
+      <div class="filter-tabs">
+        <button class="filter-tab filter-tab-active" onclick="filterProducts('all')">الكل</button>
+        <button class="filter-tab" onclick="filterProducts('phones')">📱 هواتف</button>
+        <button class="filter-tab" onclick="filterProducts('tv')">📺 تلفزيونات</button>
+        <button class="filter-tab" onclick="filterProducts('laptop')">💻 لابتوب</button>
+        <button class="filter-tab" onclick="filterProducts('watch')">⌚ ساعات</button>
+        <button class="filter-tab" onclick="filterProducts('audio')">🎧 سماعات</button>
+        <button class="filter-tab" onclick="filterProducts('screen')">🖥️ شاشات</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS GRID -->
+  <section class="products" style="padding-top: 0;">
+    <div class="products-grid" id="productsGrid">
+
+      <!-- هواتف -->
+      <div class="product-card" data-cat="phones">
+        <div class="card-visual card-visual-img">
+          <span class="card-badge">جديد</span>
+          <img
+            src="s25plus.png"
+            alt="Galaxy S25+"
+            class="card-product-img"
+          >
+        </div>
+        <div class="card-body">
+          <div class="card-category">هواتف</div>
+          <div class="card-title">Galaxy S25+</div>
+          <div class="card-desc">أداء استثنائي مع شاشة 6.7 بوصة وكاميرا ثلاثية متطورة</div>
+          <div class="card-footer">
+            <span class="card-price">4,900 د.ل</span>
+            <a href="#" class="card-btn">اشتر الآن</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="phones">
+        <div class="card-visual card-visual-img">
+          <img
+            src="Samsung-Galaxy-A55.png"
+            alt="Galaxy A55"
+            class="card-product-img"
+          >
+        </div>
+        <div class="card-body">
+          <div class="card-category">هواتف</div>
+          <div class="card-title">Galaxy A55</div>
+          <div class="card-desc">هاتف متوسط بمواصفات عالية وشاشة Super AMOLED 6.6 بوصة</div>
+          <div class="card-footer">
+            <span class="card-price">2,100 د.ل</span>
+            <a href="#" class="card-btn">اشتر الآن</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- تلفزيونات -->
+      <div class="product-card" data-cat="tv">
+        <div class="card-visual card-visual-img">
+          <span class="card-badge">الأكثر مبيعاً</span>
+          <img
+            src="qled.png"
+            alt="Neo QLED 8K"
+            class="card-product-img"
+          >
+        </div>
+        <div class="card-body">
+          <div class="card-category">تلفزيونات</div>
+          <div class="card-title">Neo QLED 8K 75"</div>
+          <div class="card-desc">دقة 8K مذهلة مع تقنية Mini LED لألوان حية لا تصدق</div>
+          <div class="card-footer">
+            <span class="card-price">8,500 د.ل</span>
+            <a href="#" class="card-btn">اشتر الآن</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- لابتوب -->
+      <div class="product-card" data-cat="laptop">
+        <div class="card-visual card-visual-img">
+          <span class="card-badge">عرض</span>
+          <img
+            src="Galaxy_Book4_Pro1.png"
+            alt="Galaxy Book4 Pro"
+            class="card-product-img"
+          >
+        </div>
+        <div class="card-body">
+          <div class="card-category">لابتوب</div>
+          <div class="card-title">Galaxy Book4 Pro</div>
+          <div class="card-desc">رفاهية العمل الاحترافي مع شاشة AMOLED وبطارية تدوم طويلاً</div>
+          <div class="card-footer">
+            <span class="card-price">6,200 د.ل</span>
+            <a href="#" class="card-btn">اشتر الآن</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ساعات -->
+      <div class="product-card" data-cat="watch">
+        <div class="card-visual card-visual-img">
+          <img
+            src="Galaxy-Watch-Ultra-1.png"
+            alt="Galaxy Watch Ultra"
+            class="card-product-img"
+          >
+        </div>
+        <div class="card-body">
+          <div class="card-category">ساعات ذكية</div>
+          <div class="card-title">Galaxy Watch Ultra</div>
+          <div class="card-desc">ساعة رياضية متطورة مع تتبع دقيق للصحة ومقاومة الماء</div>
+          <div class="card-footer">
+            <span class="card-price">1,950 د.ل</span>
+            <a href="#" class="card-btn">اشتر الآن</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="watch">
+        <div class="card-visual card-visual-img">
+          <span class="card-badge">الأكثر مبيعاً</span>
+          <img
+            src="watch34343.jpg"
+            alt="Galaxy Watch7"
+            class="card-product-img watch-img"
+          >
+        </div>
+        <div class="card-body">
+          <div class="card-category">ساعات ذكية</div>
+          <div class="card-title">Galaxy Watch7</div>
+          <div class="card-desc">مراقبة صحية شاملة مع تحليل النوم وتتبع معدل الأكسجين</div>
+          <div class="card-footer">
+            <span class="card-price">1,250 د.ل</span>
+            <a href="#" class="card-btn">اشتر الآن</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- سماعات -->
+      <div class="product-card" data-cat="audio">
+        <div class="card-visual card-visual-img">
+          <span class="card-badge">جديد</span>
+          <img
+            src="Galaxy_Buds3_Pro.png"
+            alt="Galaxy Buds3 Pro"
+            class="card-product-img"
+          >
+        </div>
+        <div class="card-body">
+          <div class="card-category">سماعات</div>
+          <div class="card-title">Galaxy Buds3 Pro</div>
+          <div class="card-desc">صوت Hi-Fi مع خاصية إلغاء الضوضاء الذكية وعمر بطارية ممتاز</div>
+          <div class="card-footer">
+            <span class="card-price">750 د.ل</span>
+            <a href="#" class="card-btn">اشتر الآن</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- شاشات -->
+      <div class="product-card" data-cat="screen">
+        <div class="card-visual card-visual-img">
+          <img
+            src="12222121212.jpg"
+            alt="Odyssey OLED G9"
+            class="card-product-img odyssey-img"
+          >
+        </div>
+        <div class="card-body">
+          <div class="card-category">شاشات</div>
+          <div class="card-title">Odyssey OLED G9</div>
+          <div class="card-desc">شاشة ألعاب منحنية OLED 49 بوصة بتحديث 240Hz للمحترفين</div>
+          <div class="card-footer">
+            <span class="card-price">7,800 د.ل</span>
+            <a href="#" class="card-btn">اشتر الآن</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROMO BANNER -->
+  <section class="promo-banner">
+    <h2>عروض حصرية لفترة محدودة</h2>
+    <p>وفّر حتى 30% على أحدث منتجات Galaxy — العرض ينتهي قريباً</p>
+    <a href="#products" class="btn-white">استفد من العرض الآن</a>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="testimonials">
+    <div class="section-header">
+      <span class="section-tag">آراء العملاء</span>
+      <h2 class="section-title">ماذا يقول عملاؤنا</h2>
+      <p class="section-sub">آلاف العملاء الراضين يثقون بمنتجات Samsung يومياً</p>
+    </div>
+    <div class="t-grid">
+      <div class="t-card">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-text">Galaxy S25 Ultra غيّر طريقة عملي بالكامل. الكاميرا خارقة والأداء لا يصدق، استحق كل دينار.</p>
+        <div class="t-author">
+          <div class="t-avatar" style="background: var(--blue);">مأ</div>
+          <div>
+            <div class="t-name">محمد أحمد</div>
+            <div class="t-role">مصور محترف</div>
+          </div>
+        </div>
+      </div>
+      <div class="t-card">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-text">تلفزيون Neo QLED أفضل شراء في حياتي. الصورة مذهلة والصوت يملأ الغرفة، جودة استثنائية.</p>
+        <div class="t-author">
+          <div class="t-avatar" style="background: #0f766e;">أع</div>
+          <div>
+            <div class="t-name">أحمد علي</div>
+            <div class="t-role">مدير تسويق</div>
+          </div>
+        </div>
+      </div>
+      <div class="t-card">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-text">Galaxy Book4 Pro رفيق العمل المثالي. خفيف، سريع، والشاشة AMOLED تجعل كل شيء يبدو جميلاً.</p>
+        <div class="t-author">
+          <div class="t-avatar" style="background: #7c3aed;">أح</div>
+          <div>
+            <div class="t-name">أحمد حسن</div>
+            <div class="t-role">مطور برمجيات</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter" id="newsletter">
+    <div class="newsletter-box">
+      <h2>ابقَ على اطلاع دائم</h2>
+      <p>اشترك في نشرتنا البريدية واحصل على عروض حصرية وأخبار أحدث المنتجات أولاً بأول</p>
+      <div class="form-row">
+        <input type="email" placeholder="أدخل بريدك الإلكتروني">
+        <button type="button">اشترك</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>SAMSUNG</h3>
+        <p>نحن نؤمن بأن التكنولوجيا يجب أن تُبهج وتُلهم. كل منتج نصنعه يحمل رؤيتنا لعالم أفضل.</p>
+        <address class="footer-address">
+          <p>📍 شارع عمر المختار، وسط المدينة<br>طرابلس، ليبيا</p>
+          <p>📞 <a href="tel:+218911234567">‎+218 91 123 4567</a></p>
+          <p>📞 <a href="tel:+218211234567">‎+218 21 123 4567</a></p>
+          <p>✉️ <a href="mailto:info@samsung.ly">info@samsung.ly</a></p>
+        </address>
+      </div>
+      <div class="footer-col">
+        <h4>المنتجات</h4>
+        <ul>
+          <li><a href="#">الهواتف الذكية</a></li>
+          <li><a href="#">التلفزيونات</a></li>
+          <li><a href="#">اللابتوب</a></li>
+          <li><a href="#">الساعات الذكية</a></li>
+          <li><a href="#">الصوتيات</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>الدعم</h4>
+        <ul>
+          <li><a href="#">مركز المساعدة</a></li>
+          <li><a href="#">الضمان</a></li>
+          <li><a href="#">تتبع الطلب</a></li>
+          <li><a href="#">الإصلاح</a></li>
+          <li><a href="#">تواصل معنا</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>الشركة</h4>
+        <ul>
+          <li><a href="#">من نحن</a></li>
+          <li><a href="#">الأخبار</a></li>
+          <li><a href="#">الاستدامة</a></li>
+          <li><a href="#">وظائف</a></li>
+          <li><a href="#">المستثمرون</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Samsung Libya — طرابلس، ليبيا. جميع الحقوق محفوظة.</span>
+      <span>سياسة الخصوصية · الشروط والأحكام</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
