@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>تواصل معنا — Samsung Libya</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ===== CONTACT PAGE ===== */
+    .contact-hero {
+      background: linear-gradient(135deg, #dde6f0 0%, #e8f0fe 100%);
+      padding: 140px 8% 80px;
+      text-align: center;
+    }
+
+    .contact-hero h1 {
+      font-size: clamp(32px, 5vw, 56px);
+      font-weight: 700;
+      color: #1a1a2e;
+      margin-bottom: 16px;
+    }
+
+    .contact-hero h1 span { color: #1428a0; }
+
+    .contact-hero p {
+      font-size: 17px;
+      color: #555;
+      max-width: 500px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* ===== CONTACT SECTION ===== */
+    .contact-section {
+      padding: 80px 8%;
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    /* معلومات التواصل */
+    .contact-info h2 {
+      font-size: 26px;
+      font-weight: 700;
+      color: #1a1a2e;
+      margin-bottom: 32px;
+    }
+
+    .info-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      padding: 24px;
+      background: #f8faff;
+      border-radius: 16px;
+      margin-bottom: 16px;
+      border: 1px solid #e8eef8;
+      transition: box-shadow 0.3s;
+    }
+
+    .info-card:hover {
+      box-shadow: 0 8px 24px rgba(20,40,160,0.08);
+    }
+
+    .info-icon {
+      width: 48px;
+      height: 48px;
+      background: #1428a0;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 20px;
+    }
+
+    .info-text h4 {
+      font-size: 14px;
+      color: #888;
+      margin-bottom: 4px;
+      font-weight: 500;
+    }
+
+    .info-text p {
+      font-size: 16px;
+      color: #1a1a2e;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .info-text a {
+      color: #1428a0;
+      text-decoration: none;
+    }
+
+    /* الفورم */
+    .contact-form-wrap {
+      background: #fff;
+      border-radius: 24px;
+      padding: 48px 40px;
+      box-shadow: 0 4px 40px rgba(0,0,0,0.07);
+      border: 1px solid #eef2ff;
+    }
+
+    .contact-form-wrap h2 {
+      font-size: 24px;
+      font-weight: 700;
+      color: #1a1a2e;
+      margin-bottom: 32px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: #444;
+      margin-bottom: 8px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1.5px solid #e0e7ff;
+      border-radius: 10px;
+      font-size: 15px;
+      font-family: 'IBM Plex Sans Arabic', sans-serif;
+      color: #1a1a2e;
+      background: #fafbff;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none;
+      box-sizing: border-box;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: #1428a0;
+      box-shadow: 0 0 0 3px rgba(20,40,160,0.08);
+      background: #fff;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 130px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 14px;
+      background: #1428a0;
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      font-size: 16px;
+      font-weight: 700;
+      font-family: 'IBM Plex Sans Arabic', sans-serif;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+      margin-top: 8px;
+    }
+
+    .submit-btn:hover {
+      background: #0f1f80;
+      transform: translateY(-2px);
+    }
+
+    .success-msg {
+      display: none;
+      text-align: center;
+      padding: 20px;
+      background: #f0fdf4;
+      border-radius: 12px;
+      color: #16a34a;
+      font-weight: 600;
+      font-size: 16px;
+      margin-top: 16px;
+      border: 1px solid #bbf7d0;
+    }
+
+    /* responsive */
+    @media (max-width: 768px) {
+      .contact-section {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 60px 6%;
+      }
+      .form-row { grid-template-columns: 1fr; }
+      .contact-form-wrap { padding: 32px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">SAMSUNG</a>
+    <ul class="nav-links">
+      <li><a href="index.html#categories">الفئات</a></li>
+      <li><a href="index.html#products">المنتجات</a></li>
+      <li><a href="index.html#featured">المميز</a></li>
+      <li><a href="index.html#testimonials">آراء العملاء</a></li>
+      <li><a href="index.html#newsletter" class="nav-cta">اشترك الآن</a></li>
+    </ul>
+
+    <!-- زر الهمبرغر (جوال فقط) -->
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="فتح القائمة" onclick="toggleMobileMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- القائمة الجانبية للجوال -->
+  <div class="nav-drawer" id="nav-drawer">
+    <ul>
+      <li><a href="index.html#categories" onclick="closeMobileMenu()">🗂 الفئات</a></li>
+      <li><a href="index.html#products" onclick="closeMobileMenu()">📱 المنتجات</a></li>
+      <li><a href="index.html#featured" onclick="closeMobileMenu()">⭐ المميز</a></li>
+      <li><a href="index.html#testimonials" onclick="closeMobileMenu()">💬 آراء العملاء</a></li>
+    </ul>
+    <a href="index.html#newsletter" class="nav-cta-drawer" onclick="closeMobileMenu()">اشترك الآن ✨</a>
+  </div>
+  <div class="nav-overlay" id="nav-overlay" onclick="closeMobileMenu()"></div>
+
+  <!-- HERO -->
+  <div class="contact-hero">
+    <h1>تواصل <span>معنا</span></h1>
+    <p>نحن هنا لمساعدتك — سواء كان لديك سؤال عن منتج أو تحتاج دعماً فنياً</p>
+  </div>
+
+  <!-- CONTACT SECTION -->
+  <div class="contact-section">
+
+    <!-- معلومات التواصل -->
+    <div class="contact-info">
+      <h2>معلومات التواصل</h2>
+
+      <div class="info-card">
+        <div class="info-icon">📞</div>
+        <div class="info-text">
+          <h4>رقم الهاتف</h4>
+          <p><a href="tel:+218910000000">218-91-000-0000+</a></p>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <div class="info-icon">📧</div>
+        <div class="info-text">
+          <h4>البريد الإلكتروني</h4>
+          <p><a href="mailto:support@samsung-libya.ly">support@samsung-libya.ly</a></p>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <div class="info-icon">📍</div>
+        <div class="info-text">
+          <h4>العنوان</h4>
+          <p>طرابلس، ليبيا — شارع عمر المختار</p>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <div class="info-icon">🕐</div>
+        <div class="info-text">
+          <h4>ساعات العمل</h4>
+          <p>السبت – الخميس: 9 صباحاً – 6 مساءً</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- الفورم -->
+    <div class="contact-form-wrap">
+      <h2>أرسل لنا رسالة</h2>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>الاسم الكامل</label>
+          <input type="text" id="name" placeholder="أدخل اسمك" />
+        </div>
+        <div class="form-group">
+          <label>رقم الهاتف</label>
+          <input type="tel" id="phone" placeholder="09xxxxxxxx" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>البريد الإلكتروني</label>
+        <input type="email" id="email" placeholder="example@email.com" />
+      </div>
+
+      <div class="form-group">
+        <label>الموضوع</label>
+        <select id="subject">
+          <option value="">اختر الموضوع</option>
+          <option>استفسار عن منتج</option>
+          <option>دعم فني</option>
+          <option>طلب ضمان</option>
+          <option>شكوى</option>
+          <option>أخرى</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>الرسالة</label>
+        <textarea id="message" placeholder="اكتب رسالتك هنا..."></textarea>
+      </div>
+
+      <button class="submit-btn" onclick="sendMessage()">إرسال الرسالة ✉️</button>
+      <div class="success-msg" id="success-msg">✓ تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.</div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <p class="footer-copy">© 2025 Samsung Libya. جميع الحقوق محفوظة.</p>
+    </div>
+  </footer>
+
+  <script>
+    function sendMessage() {
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      if (!name || !email || !message) {
+        alert('يرجى تعبئة الاسم والإيميل والرسالة على الأقل');
+        return;
+      }
+
+      const btn = document.querySelector('.submit-btn');
+      btn.textContent = 'جاري الإرسال...';
+      btn.disabled = true;
+
+      setTimeout(() => {
+        document.getElementById('success-msg').style.display = 'block';
+        btn.textContent = '✓ تم الإرسال';
+        btn.style.background = '#16a34a';
+        document.getElementById('name').value = '';
+        document.getElementById('email').value = '';
+        document.getElementById('phone').value = '';
+        document.getElementById('message').value = '';
+        document.getElementById('subject').value = '';
+      }, 1200);
+    }
+
+    // Navbar scroll effect
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      nav.style.background = window.scrollY > 60
+        ? 'rgba(255,255,255,0.98)'
+        : 'rgba(255,255,255,0.92)';
+    });
+
+    // Mobile menu
+    function toggleMobileMenu() {
+      const drawer    = document.getElementById('nav-drawer');
+      const hamburger = document.getElementById('nav-hamburger');
+      const overlay   = document.getElementById('nav-overlay');
+      const isOpen    = drawer.classList.contains('open');
+      if (isOpen) { closeMobileMenu(); }
+      else {
+        drawer.classList.add('open');
+        hamburger.classList.add('open');
+        overlay.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeMobileMenu() {
+      ['nav-drawer','nav-hamburger','nav-overlay'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.classList.remove('open');
+      });
+      document.body.style.overflow = '';
+    }
+  </script>
+
+</body>
+</html>
